@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/admin/login', [AdminAuthController::class, 'login'])->
     name('admin.login');
+Route::get('/admin/forgot-password', [AdminAuthController::class, 'passwordrequest'])->
+    name('admin.password.request');
 
 Route::group([
     'middleware' => ['auth', 'user.type:admin'],
